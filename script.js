@@ -23,6 +23,26 @@ setInterval(createFloatingHeart, 800);
 // Função para começar a jornada
 function startJourney() {
   document.getElementById("welcome").style.display = "none";
+
+  const audio = document.getElementById("backgroundMusic");
+
+  // Aguardar um pouco antes de tentar tocar
+  setTimeout(() => {
+    if (audio.readyState >= 2) {
+      audio.play()
+        .then(() => {
+          document.getElementById("musicIcon").textContent = "🎶";
+          musicPlaying = true;
+          console.log("Auto-play funcionou");
+        })
+        .catch((error) => {
+          console.log("Auto-play bloqueado pelo navegador:", error);
+        });
+    } else {
+      console.log("Áudio ainda não está pronto para tocar.");
+    }
+  }, 500);
+
   showNextSection();
 }
 
@@ -31,9 +51,7 @@ function showNextSection() {
   const sections = ["section1", "section2", "section3", "final"];
   if (currentSection < sections.length) {
     setTimeout(() => {
-      document
-        .getElementById(sections[currentSection])
-        .classList.add("visible");
+      document.getElementById(sections[currentSection]).classList.add("visible");
       currentSection++;
       if (currentSection < sections.length) {
         setTimeout(showNextSection, 3000);
@@ -45,10 +63,8 @@ function showNextSection() {
 // Aumentar contador de amor
 function increaseLove() {
   loveCount += Math.floor(Math.random() * 100) + 100;
-  document.getElementById("loveCounter").textContent =
-    loveCount.toLocaleString();
+  document.getElementById("loveCounter").textContent = loveCount.toLocaleString();
 
-  // Criar efeito de partículas
   createSparkles();
 }
 
@@ -72,20 +88,41 @@ function showMessage(message) {
   alert(message);
 }
 
-// Controle de música (simulado)
+// Controle de música
 function toggleMusic() {
+  const audio = document.getElementById("backgroundMusic");
   const icon = document.getElementById("musicIcon");
+
   if (musicPlaying) {
+    audio.pause();
     icon.textContent = "🎵";
     musicPlaying = false;
+    console.log("Música pausada");
   } else {
-    icon.textContent = "🎶";
-    musicPlaying = true;
-    // Aqui você poderia adicionar áudio real
+    if (audio.readyState >= 2) {
+      audio.play()
+        .then(() => {
+          icon.textContent = "🎶";
+          musicPlaying = true;
+          console.log("Música tocando");
+        })
+        .catch((error) => {
+          console.error("Erro ao reproduzir áudio:", error);
+          alert("Erro ao tocar música. Verifique se o arquivo existe em: " + audio.src);
+        });
+    } else {
+      console.log("Áudio ainda carregando...");
+      alert("Música ainda carregando, tente novamente em alguns segundos!");
+
+      audio.load();
+      audio.addEventListener("canplay", function () {
+        console.log("Áudio carregado e pronto");
+      }, { once: true });
+    }
   }
 }
 
-// Animações de scroll (simuladas com timeout)
+// Efeitos ao rolar a página
 window.addEventListener("scroll", () => {
   const sections = document.querySelectorAll(".section");
   sections.forEach((section) => {
@@ -96,7 +133,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Efeitos especiais quando a página carrega
+// Efeitos ao carregar a página
 window.addEventListener("load", () => {
   setTimeout(() => {
     createSparkles();

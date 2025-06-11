@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lu e Nat ♥</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Corações flutuantes -->
+    <div class="floating-hearts" id="floating-hearts"></div>
+
+    <div class="container">
+        <!-- Seção de boas-vindas -->
+        <div class="section visible welcome-section" id="welcome">
+            <h1 class="title">Para Meu Amor ♥</h1>
+            <p class="subtitle">Uma surpresa especial para o Dia dos Namorados</p>
+            <button class="magic-button" onclick="startJourney()">Clique Aqui Para Começar Nossa Jornada</button>
+        </div>
+
+        <!-- Seção 1: Primeira mensagem -->
+        <div class="section message-section" id="section1">
+            <h2 class="section-title">Minha Princesa...</h2>
+            <p class="message-text">
+                Mesmo com toda a distância que nos separa, meu coração está sempre pertinho do seu. 
+                Cada dia que passa, meu amor por você cresce mais e mais, assim como nosso amor floresceu na infância.
+                Você é a razão do meu sorriso, a luz que ilumina meus dias, e a inspiração de todos os meus sonhos. Por você, sei que posso ser um pouco melhor
+                Cada dia mais, quero crescer ao seu lado, evoluir contigo, acompanhar suas conquistas e construir nossa família com muito orgulho.
+                Quero ser pra ti aquela pessoa que você nunca teve, e, embora eu possa falhar, ser chato e ter meus defeitos, quero que saiba
+                que estarei sempre contigo dando o meu melhor por nós.
+            </p>
+            <div class="photo-gallery">
+                <div class="photo-frame" onclick="showMessage('Aqui poderia estar nossa primeira foto juntos ♥')">
+                    <img src="./public/nat e lu 1.jpg" alt="Nossa primeira foto juntos">
+                </div>
+                <div class="photo-frame" onclick="showMessage('Aqui vai ser nosso primeiro encontro ♥')">
+                    <img src="./public/nat e lu 2.jpg" alt="Nosso primeiro encontro">
+                </div>
+                <div class="photo-frame" onclick="showMessage('Aqui vai ser uma foto bobona ♥')">
+                    <img src="./public/nat e lu 3.jpg" alt="Foto bobona nossa">
+                </div>
+                <div class="photo-frame" onclick="showMessage('Aqui vai ser o dia que eu vou te pedir em namoro ou casamento ♥')">
+                    <img src="./public/nat e lu 4.jpg" alt="Pedido especial">
+                </div>
+            </div>
+            <p class="message-text">✨ Ao longo do tempo, você me transforma cada vez mais, e quero que saiba que assim como você me transforma,
+                conforme nossa história for sendo escrita, mais imagens serão inseridas/substituídas aqui como nosso museu de memórias. Coloquei algumas avulsas antes de ter nossas fotinhas juntos de verdade. 
+                Eu te amo, Lu. Eu te amo, Jéssica. Eu te amo, minha pequena. ♥
+            </p>
+        </div>
+
+        <!-- Seção 2: Interativa -->
+        <div class="section interactive-section" id="section2">
+            <h2 style="color: #ff1744; font-size: 2.5rem; margin-bottom: 30px;">Meu Amor Por Você</h2>
+            <p style="font-size: 1.2rem; color: #333; margin-bottom: 20px;">
+                Clique nos corações para ver o quanto eu te amo crescer!
+            </p>
+            <div class="love-counter" id="loveCounter">0</div>
+            <p style="color: #666;">batimentos do meu coração por você</p>
+            
+            <div class="interactive-hearts">
+                <span class="clickable-heart" onclick="increaseLove()">♥</span>
+                <span class="clickable-heart" onclick="increaseLove()">♥</span>
+                <span class="clickable-heart" onclick="increaseLove()">♥</span>
+                <span class="clickable-heart" onclick="increaseLove()">♥</span>
+                <span class="clickable-heart" onclick="increaseLove()">♥</span>
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 1.1rem; color: #333; font-style: italic;">
+                "Cada batida do meu coração sussurra seu nome. Cada respiração que tomo é um lembrete de como sou grato por ter você em minha vida."
+            </p>
+        </div>
+
+        <!-- Seção 3: Promessas -->
+        <div class="section message-section" id="section3">
+            <h2 style="color: #ff1744; font-size: 2.5rem; margin-bottom: 30px;">Minhas Promessas Para Você</h2>
+            <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <p class="message-text">💕 Prometo te amar cada dia mais do que o anterior</p>
+                <p class="message-text">🌟 Prometo estar sempre ao seu lado, mesmo à distância</p>
+                <p class="message-text">🌹 Prometo fazer você sorrir todos os dias</p>
+                <p class="message-text">💖 Prometo te surpreender com pequenos gestos de amor</p>
+                <p class="message-text">🥰 Prometo ser seu porto seguro em todos os momentos</p>
+                <p class="message-text">✨ Prometo construir um futuro lindo ao seu lado</p>
+            </div>
+        </div>
+
+        <!-- Seção final -->
+        <div class="section final-section" id="final">
+            <h2 style="font-size: 3rem; margin-bottom: 30px;">Feliz Dia dos Namorados!</h2>
+            <p style="font-size: 1.4rem; line-height: 1.8; margin-bottom: 30px;">
+                Essa distância não significa 1% de tudo o que a gente vai viver. Obrigado por ser tão incrível comigo e pra minha vida.
+                Você é meu amor, minha vida, minha razão de ser. 
+                Que este presente seja apenas um pequeno reflexo do amor infinito que sinto por você.
+            </p>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                Mal posso esperar para estar do seu ladinho, colado contigo, tendo dengo o dia todo, te pegando pra Cristo
+                te fazendo rir, brincando contigo, te fazendo sorrir, te deixando brava e tudo mais.
+            </p>
+            <h3 style="font-size: 2.5rem; margin: 30px 0;">EU TE AMO MUITO MINHA GATINHA! ♥</h3>
+            <p class="signature">Com todo meu amor,<br>Seu namorado apaixonado Lucas.</p>
+        </div>
+    </div>
+
+    <!-- Controle de música -->
+    <div class="music-control" onclick="toggleMusic()" title="Clique para tocar/pausar música romântica">
+        <span id="musicIcon">🎵</span>
+    </div>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>

@@ -1,117 +1,256 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lu e Nat ♥</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="imagex/png" href="./assets/natsu-e-lucy-e-happy.webp">
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      type="imagex/png"
+      href="./assets/natsu-e-lucy-e-happy.webp"
+    />
+  </head>
+  <body>
     <!-- Corações flutuantes -->
     <div class="floating-hearts" id="floating-hearts"></div>
 
     <div class="container">
-        <!-- Seção de boas-vindas -->
-        <div class="section visible welcome-section" id="welcome">
-            <h1 class="title">Para Meu Amor ♥</h1>
-            <p class="subtitle">Uma surpresa especial para o Dia dos Namorados</p>
-            <button class="magic-button" onclick="startJourney()">Clique Aqui Para Começar Nossa Jornada</button>
+      <!-- Seção de boas-vindas -->
+      <div class="section visible welcome-section" id="welcome">
+        <h1 class="title">Para Meu Amor ♥</h1>
+        <p class="subtitle">Uma surpresa especial para o Dia dos Namorados</p>
+        <button class="magic-button" onclick="startJourney()">
+          Clique Aqui Para Começar Nossa Jornada
+        </button>
+      </div>
+
+      <!-- Seção 1: Primeira mensagem -->
+      <div class="section message-section" id="section1">
+        <h2 class="section-title">Minha Princesa...</h2>
+        <p class="message-text">
+          Mesmo com toda a distância que nos separa, meu coração está sempre
+          pertinho do seu. Cada dia que passa, meu amor por você cresce mais e
+          mais, assim como nosso amor floresceu na infância. Você é a razão do
+          meu sorriso, a luz que ilumina meus dias, e a inspiração de todos os
+          meus sonhos. Por você, sei que posso ser um pouco melhor. Cada dia
+          mais, quero crescer ao seu lado, evoluir contigo, acompanhar suas
+          conquistas e construir nossa família com muito orgulho. Quero ser pra
+          ti aquela pessoa que você nunca teve, e, embora eu possa falhar, ser
+          chato e ter meus defeitos, quero que saiba que estarei sempre contigo
+          dando o meu melhor por nós.
+        </p>
+        <div class="photo-gallery">
+          <div
+            class="photo-frame"
+            onclick="showMessage('Aqui poderia estar nossa primeira foto juntos ♥')"
+          >
+            <img src="./assets/natelu1.jpg" alt="Nossa primeira foto juntos" />
+          </div>
+          <div
+            class="photo-frame"
+            onclick="showMessage('Aqui vai ser nosso primeiro encontro ♥')"
+          >
+            <img src="./assets/natelu2.jpg" alt="Nosso primeiro encontro" />
+          </div>
+          <div
+            class="photo-frame"
+            onclick="showMessage('Aqui vai ser uma foto bobona ♥')"
+          >
+            <img src="./assets/natelu3.jpg" alt="Foto bobona nossa" />
+          </div>
+          <div
+            class="photo-frame"
+            onclick="showMessage('Aqui vai ser o dia que eu vou te pedir em namoro ou casamento ♥')"
+          >
+            <img src="./assets/natelu4.jpg" alt="Pedido especial" />
+          </div>
+        </div>
+        <p class="message-text">
+          ✨ Ao longo do tempo, você me transforma cada vez mais, e quero que
+          saiba que assim como você me transforma, conforme nossa história for
+          sendo escrita, mais imagens serão inseridas/substituídas aqui como
+          nosso museu de memórias. Coloquei algumas fotinhas avulsas antes de
+          ter nossas fotinhas juntos de verdade. Eu te amo, Lu. Eu te amo,
+          Jéssica. Eu te amo, minha pequena. ♥
+        </p>
+      </div>
+
+      <!-- Seção 2: Interativa -->
+      <div class="section interactive-section" id="section2">
+        <h2 style="color: #ff1744; font-size: 2.5rem; margin-bottom: 30px">
+          Meu Amor Por Você
+        </h2>
+        <p style="font-size: 1.2rem; color: #333; margin-bottom: 20px">
+          Clique nos corações para ver o quanto eu te amo crescer!
+        </p>
+        <div class="love-counter" id="loveCounter">0</div>
+        <p style="color: #666">batimentos do meu coração por você</p>
+
+        <div class="interactive-hearts">
+          <span class="clickable-heart" onclick="increaseLove()">♥</span>
+          <span class="clickable-heart" onclick="increaseLove()">♥</span>
+          <span class="clickable-heart" onclick="increaseLove()">♥</span>
+          <span class="clickable-heart" onclick="increaseLove()">♥</span>
+          <span class="clickable-heart" onclick="increaseLove()">♥</span>
         </div>
 
-        <!-- Seção 1: Primeira mensagem -->
-        <div class="section message-section" id="section1">
-            <h2 class="section-title">Minha Princesa...</h2>
-            <p class="message-text">
-                Mesmo com toda a distância que nos separa, meu coração está sempre pertinho do seu. 
-                Cada dia que passa, meu amor por você cresce mais e mais, assim como nosso amor floresceu na infância.
-                Você é a razão do meu sorriso, a luz que ilumina meus dias, e a inspiração de todos os meus sonhos. Por você, sei que posso ser um pouco melhor.
-                Cada dia mais, quero crescer ao seu lado, evoluir contigo, acompanhar suas conquistas e construir nossa família com muito orgulho.
-                Quero ser pra ti aquela pessoa que você nunca teve, e, embora eu possa falhar, ser chato e ter meus defeitos, quero que saiba
-                que estarei sempre contigo dando o meu melhor por nós.
-            </p>
-            <div class="photo-gallery">
-                <div class="photo-frame" onclick="showMessage('Aqui poderia estar nossa primeira foto juntos ♥')">
-                    <img src="./assets/natelu1.jpg" alt="Nossa primeira foto juntos">
-                </div>
-                <div class="photo-frame" onclick="showMessage('Aqui vai ser nosso primeiro encontro ♥')">
-                    <img src="./assets/natelu2.jpg" alt="Nosso primeiro encontro">
-                </div>
-                <div class="photo-frame" onclick="showMessage('Aqui vai ser uma foto bobona ♥')">
-                    <img src="./assets/natelu3.jpg" alt="Foto bobona nossa">
-                </div>
-                <div class="photo-frame" onclick="showMessage('Aqui vai ser o dia que eu vou te pedir em namoro ou casamento ♥')">
-                    <img src="./assets/natelu4.jpg" alt="Pedido especial">
-                </div>
-            </div>
-            <p class="message-text">✨ Ao longo do tempo, você me transforma cada vez mais, e quero que saiba que assim como você me transforma,
-                conforme nossa história for sendo escrita, mais imagens serão inseridas/substituídas aqui como nosso museu de memórias. Coloquei algumas fotinhas avulsas antes de ter nossas fotinhas juntos de verdade. 
-                Eu te amo, Lu. Eu te amo, Jéssica. Eu te amo, minha pequena. ♥
-            </p>
+        <p
+          style="
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #333;
+            font-style: italic;
+          "
+        >
+          "Cada batida do meu coração sussurra seu nome. Cada respiração que
+          tomo é um lembrete de como sou grato por ter você em minha vida."
+        </p>
+      </div>
+
+      <!-- Seção 3: Promessas -->
+      <div class="section message-section" id="section3">
+        <h2 style="color: #ff1744; font-size: 2.5rem; margin-bottom: 30px">
+          Minhas Promessas Para Você
+        </h2>
+        <div style="text-align: left; max-width: 600px; margin: 0 auto">
+          <p class="message-text">
+            💕 Prometo te amar cada dia mais do que o anterior
+          </p>
+          <p class="message-text">
+            🌟 Prometo estar sempre ao seu lado, mesmo à distância
+          </p>
+          <p class="message-text">🌹 Prometo fazer você sorrir todos os dias</p>
+          <p class="message-text">
+            💖 Prometo te surpreender com pequenos gestos de amor
+          </p>
+          <p class="message-text">
+            🥰 Prometo ser seu porto seguro em todos os momentos
+          </p>
+          <p class="message-text">
+            ✨ Prometo construir um futuro lindo ao seu lado
+          </p>
+        </div>
+      </div>
+
+      <!-- Nova Seção Interativa: Canvas Romântico -->
+      <div class="section interactive-section" id="section4">
+        <h2 style="color: #ff1744; font-size: 2.5rem; margin-bottom: 30px">
+          Nosso Céu de Amor
+        </h2>
+        <p style="font-size: 1.2rem; color: #333; margin-bottom: 20px">
+          Desenhe corações, crie uma constelação com seu nome e revele uma
+          mensagem secreta de amor!
+        </p>
+
+        <!-- Adicionei um input para o nome -->
+        <div style="margin-bottom: 15px">
+          <input
+            type="text"
+            id="constellationName"
+            placeholder="Digite seu nome"
+            style="padding: 8px; border-radius: 5px; border: 1px solid #ff1744"
+          />
         </div>
 
-        <!-- Seção 2: Interativa -->
-        <div class="section interactive-section" id="section2">
-            <h2 style="color: #ff1744; font-size: 2.5rem; margin-bottom: 30px;">Meu Amor Por Você</h2>
-            <p style="font-size: 1.2rem; color: #333; margin-bottom: 20px;">
-                Clique nos corações para ver o quanto eu te amo crescer!
-            </p>
-            <div class="love-counter" id="loveCounter">0</div>
-            <p style="color: #666;">batimentos do meu coração por você</p>
-            
-            <div class="interactive-hearts">
-                <span class="clickable-heart" onclick="increaseLove()">♥</span>
-                <span class="clickable-heart" onclick="increaseLove()">♥</span>
-                <span class="clickable-heart" onclick="increaseLove()">♥</span>
-                <span class="clickable-heart" onclick="increaseLove()">♥</span>
-                <span class="clickable-heart" onclick="increaseLove()">♥</span>
-            </div>
-            
-            <p style="margin-top: 30px; font-size: 1.1rem; color: #333; font-style: italic;">
-                "Cada batida do meu coração sussurra seu nome. Cada respiração que tomo é um lembrete de como sou grato por ter você em minha vida."
-            </p>
+        <canvas
+          id="romanticCanvas"
+          width="600"
+          height="400"
+          style="
+            border: 2px solid #ff1744;
+            border-radius: 10px;
+            background: #1a1a2e;
+            cursor: crosshair;
+          "
+        ></canvas>
+
+        <div style="margin-top: 20px">
+          <button class="magic-button" onclick="createConstellation()">
+            Criar Constelação com Seu Nome
+          </button>
+          <button class="magic-button" onclick="revealMessage()">
+            Revelar Mensagem Secreta
+          </button>
+          <button class="magic-button" onclick="clearCanvas()">
+            Limpar Tela
+          </button>
         </div>
 
-        <!-- Seção 3: Promessas -->
-        <div class="section message-section" id="section3">
-            <h2 style="color: #ff1744; font-size: 2.5rem; margin-bottom: 30px;">Minhas Promessas Para Você</h2>
-            <div style="text-align: left; max-width: 600px; margin: 0 auto;">
-                <p class="message-text">💕 Prometo te amar cada dia mais do que o anterior</p>
-                <p class="message-text">🌟 Prometo estar sempre ao seu lado, mesmo à distância</p>
-                <p class="message-text">🌹 Prometo fazer você sorrir todos os dias</p>
-                <p class="message-text">💖 Prometo te surpreender com pequenos gestos de amor</p>
-                <p class="message-text">🥰 Prometo ser seu porto seguro em todos os momentos</p>
-                <p class="message-text">✨ Prometo construir um futuro lindo ao seu lado</p>
-            </div>
-        </div>
+        <div class="secret-message" id="secretMessage"></div>
 
-        <!-- Seção final -->
-        <div class="section final-section" id="final">
-            <h2 style="font-size: 3rem; margin-bottom: 30px;">Feliz Dia dos Namorados!</h2>
-            <p style="font-size: 1.4rem; line-height: 1.8; margin-bottom: 30px;">
-                Essa distância não significa 1% de tudo o que a gente vai viver. Obrigado por ser tão incrível comigo e pra minha vida.
-                Você é meu amor, minha vida, minha razão de ser. 
-                Que este presente seja apenas um pequeno reflexo do amor infinito que sinto por você.
-            </p>
-            <p style="font-size: 1.2rem; margin-bottom: 20px;">
-                Mal posso esperar para estar do seu ladinho, colado contigo, tendo dengo o dia todo, te pegando pra Cristo
-                te fazendo rir, brincando contigo, te fazendo sorrir, te deixando brava e tudo mais.
-            </p>
-            <h3 style="font-size: 2.5rem; margin: 30px 0;">EU TE AMO MUITO MINHA GATINHA! ♥</h3>
-            <p class="signature">Com todo meu amor,<br>Seu namorado apaixonado Lucas.</p>
+        <p id="marryquest"
+          style="
+            margin-top: 30px;
+            font-size: 1.4rem;
+            color: #ff1744;
+            font-weight: bold;
+          "
+        >
+          Não esqueça que em breve a pergunta que eu mais quero fazer pra você,
+          vai chegar, e ela é: Quer casar comigo?
+        </p>
+
+        <div id="imageContainer"></div>
+
+        <div style="margin-top: 20px">
+          <button class="magic-button" onclick="sayYes()">
+            <a
+            id="yesbutton"
+              href="https://www.youtube.com/watch?v=qBBwXuEV4jA&list=RDqBBwXuEV4jA&start_radio=1"
+              style="color: white; text-decoration: none"
+              >Sim ♥</a
+            >
+          </button>
+          <button
+            class="magic-button no-button"
+            id="noButton"
+            onclick="moveNoButton()"
+          >
+            Não
+          </button>
         </div>
+      </div>
+
+      <!-- Seção final -->
+      <div class="section final-section" id="final">
+        <h2 style="font-size: 3rem; margin-bottom: 30px">
+          Feliz Dia dos Namorados!
+        </h2>
+        <p style="font-size: 1.4rem; line-height: 1.8; margin-bottom: 30px">
+          Essa distância não significa 1% de tudo o que a gente vai viver.
+          Obrigado por ser tão incrível comigo e pra minha vida. Você é meu
+          amor, minha vida, minha razão de ser. Que este presente seja apenas um
+          pequeno reflexo do amor infinito que sinto por você.
+        </p>
+        <p style="font-size: 1.2rem; margin-bottom: 20px">
+          Mal posso esperar para estar do seu ladinho, colado contigo, tendo
+          dengo o dia todo, te pegando pra Cristo te fazendo rir, brincando
+          contigo, te fazendo sorrir, te deixando brava e tudo mais.
+        </p>
+        <h3 style="font-size: 2.5rem; margin: 30px 0">
+          EU TE AMO MUITO MINHA GATINHA! ♥
+        </h3>
+        <p class="signature">
+          Com todo meu amor,<br />Seu namorado apaixonado Lucas.
+        </p>
+      </div>
     </div>
 
-     <!-- Player de música -->
+    <!-- Player de música -->
     <audio id="backgroundMusic" loop>
-        <source src="./assets/musica/musica.mp3" type="audio/mpeg">
+      <source src="./assets/musica/musica.mp3" type="audio/mpeg" />
     </audio>
 
     <!-- Controle de música -->
-    <div class="music-control" onclick="toggleMusic()" title="Clique para tocar/pausar música romântica">
-        <span id="musicIcon">🎵</span>
+    <div
+      class="music-control"
+      onclick="toggleMusic()"
+      title="Clique para tocar/pausar música romântica"
+    >
+      <span id="musicIcon">🎵</span>
     </div>
 
-    <script src="script.js">
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
